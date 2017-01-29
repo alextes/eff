@@ -1,0 +1,9 @@
+{
+  "name": "every-flavour-feels",
+  "version": "0.1.0",
+  "description": "An experience for the heart.",
+  "main": "index.js",
+  "repository": "git@github.com:AlexTes/every-flavour-feels.git",
+  "author": "Alexander Tesfamichael <alex.tesfamichael@gmail.com>",
+  "license": "MIT"
+}
