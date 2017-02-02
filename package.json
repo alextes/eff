@@ -25,7 +25,7 @@
     "lint:css": "stylelint src/client/css/*.sss",
     "build": "npm-run-all build:*",
     "build:pug": "pug src/client/index.pug --out dist/",
-    "build:css": "postcss --dir dist src/client/css/*.css",
+    "build:css": "postcss -o dist/main.css -p sugarss src/client/css/*.sss",
     "watch": "npm-run-all watch:*",
     "watch:css": "npm run build:css -- --watch",
     "watch:pug": "npm run build:pug -- --watch"
