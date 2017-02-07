@@ -31,6 +31,6 @@
     "watch": "npm-run-all watch:*",
     "watch:css": "npm run build:css -- --watch",
     "watch:pug": "npm run build:pug -- --watch",
-    "watch:server": "nodemon src/server/index.js"
+    "watch:server": "nodemon -q src/server/index.js"
   }
 }
