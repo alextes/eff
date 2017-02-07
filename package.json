@@ -12,6 +12,7 @@
     "eslint": "^3.14.1",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
+    "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
     "postcss-cli": "^2.6.0",
     "pug-cli": "^1.0.0-alpha6",
@@ -28,6 +29,7 @@
     "build:css": "postcss -o dist/main.css -p sugarss src/client/css/*.sss",
     "watch": "npm-run-all watch:*",
     "watch:css": "npm run build:css -- --watch",
-    "watch:pug": "npm run build:pug -- --watch"
+    "watch:pug": "npm run build:pug -- --watch",
+    "watch:server": "nodemon src/server/index.js"
   }
 }
