@@ -1,1 +1,1 @@
-console.log('hello');
+const server = require('./server.js');
