@@ -8,6 +8,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "koa": "2",
+    "koa-pino-logger": "2",
     "pify": "^2.3.0",
     "pino": "^3.4.0"
   },
