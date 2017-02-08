@@ -9,3 +9,6 @@ yarn-error.log
 
 # ESLint cache
 .eslintcache
+
+# our log file
+eff.log
