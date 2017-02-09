@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.22.0",
     "koa": "2",
     "koa-pino-logger": "2",
     "koa-static": "next",
@@ -15,6 +16,8 @@
     "pino": "^3.4.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-latest": "^6.22.0",
     "eslint": "^3.14.1",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
@@ -34,11 +37,13 @@
     "build": "npm-run-all -p build:*",
     "build:pug": "pug src/public/index.pug --out dist/public",
     "build:css": "postcss -o dist/public/main.css -p sugarss src/public/*.sss",
-    "start": "node src/index.js",
+    "build:js": "babel -d dist/ src/",
+    "start": "node dist/index.js",
+    "start:dev": "babel-node src/index.js",
     "test": "jest",
     "watch": "npm-run-all -p watch:*",
     "watch:css": "npm run build:css -- --watch",
     "watch:pug": "npm run build:pug -- --watch",
-    "watch:server": "nodemon -q -w src/ src/index.js"
+    "watch:server": "nodemon -q -w src/ --exec babel-node src/index.js"
   }
 }
