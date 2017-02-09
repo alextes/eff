@@ -13,16 +13,17 @@ app.use(logger());
 app.use(serve(path.join(__dirname, 'public'), { maxage: 3600000 }));
 
 // uses async arrow functions
-app.use((ctx, next) => {
-  return next()
-    .catch((err) => {
-      ctx.body = { message: err.message };
-      ctx.status = err.status || 500;
-    });
+app.use(async (ctx, next) => {
+  try {
+    await next();
+  } catch (err) {
+    ctx.body = { message: err.message };
+    ctx.status = err.status || 500;
+  }
 });
 
 app.use((ctx) => {
-  ctx.response.body = 'hello';
+  ctx.body = 'hello';
 });
 
 module.exports = app;
