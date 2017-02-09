@@ -1,9 +1,7 @@
-const fs = require('fs');
 const Koa = require('koa');
-const logger = require('koa-pino-logger')
+const logger = require('koa-pino-logger');
+const serve = require('koa-static');
 const path = require('path');
-const pify = require('pify');
-const pino = require('pino')({ level: 'debug' });
 
 // TODO: generate all vid url's for client
 // TODO: shuffle them
@@ -12,6 +10,7 @@ const pino = require('pino')({ level: 'debug' });
 
 const app = new Koa();
 app.use(logger());
+app.use(serve(path.join(__dirname, 'public'), { maxage: 3600000 }));
 
 // uses async arrow functions
 app.use((ctx, next) => {
@@ -25,10 +24,5 @@ app.use((ctx, next) => {
 app.use((ctx) => {
   ctx.response.body = 'hello';
 });
-
-function readFiles() {
-  pino.debug('reading files from vid/');
-  return pify(fs.readdir(path.join(__dirname, 'vid')));
-}
 
 module.exports = app;

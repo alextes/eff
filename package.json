@@ -10,6 +10,7 @@
   "dependencies": {
     "koa": "2",
     "koa-pino-logger": "2",
+    "koa-static": "next",
     "pify": "^2.3.0",
     "pino": "^3.4.0"
   },
@@ -28,14 +29,17 @@
   "scripts": {
     "lint": "npm-run-all lint:*",
     "lint:js": "eslint --cache src/",
-    "lint:css": "stylelint src/client/css/*.sss",
-    "build": "npm-run-all build:*",
-    "build:pug": "pug src/client/index.pug --out dist/",
-    "build:css": "postcss -o dist/main.css -p sugarss src/client/css/*.sss",
-    "start": "node src/server/index.js",
-    "watch": "npm-run-all watch:*",
+    "lint:css": "stylelint src/public/*.sss",
+    "build": "npm-run-all -p build:*",
+    "build:pug": "pug src/public/index.pug --out dist/public",
+    "build:css": "postcss -o dist/public/main.css -p sugarss src/public/*.sss",
+    "build:js": "babel -s src/ -d dist/",
+    "start": "node dist/index.js",
+    "start:dev": "babel-node src/index.js",
+    "test": "jest",
+    "watch": "npm-run-all -p watch:*",
     "watch:css": "npm run build:css -- --watch",
     "watch:pug": "npm run build:pug -- --watch",
-    "watch:server": "nodemon -q -w src/server/ src/server/index.js"
+    "watch:server": "nodemon -q -w src/ src/index.js"
   }
 }
