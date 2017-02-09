@@ -12,3 +12,6 @@ yarn-error.log
 
 # our log file
 eff.log
+
+# our build dir
+dist/
