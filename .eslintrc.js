@@ -1,9 +1,10 @@
 module.exports = {
   env: {
-    browser: true
+    browser: true,
+    jest: true,
   },
   extends: "airbnb-base",
   plugins: [
     "import"
-  ]
+  ],
 };
