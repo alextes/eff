@@ -31,20 +31,23 @@
     "sugarss": "^0.2.0"
   },
   "scripts": {
-    "build": "npm run clean && npm-run-all -p build:*",
+    "build": "npm run clean && run-p build:*",
     "build:pug": "pug src/public/index.pug --out dist/public",
     "build:css": "postcss -o dist/public/main.css -p sugarss src/public/*.sss",
     "build:js": "babel -d dist/ --ignore *.test.js src/",
+    "build:vid": "mkdir dist/public && cp -r vid dist/public/",
     "clean": "rm -r dist/ && mkdir dist/",
-    "lint": "npm-run-all -s lint:*",
+    "lint": "run-s lint:*",
     "lint:js": "eslint --cache src/",
     "lint:css": "stylelint src/public/*.sss",
     "start": "node dist/index.js",
     "start:dev": "babel-node src/index.js",
-    "test": "jest",
-    "watch": "npm-run-all -p watch:*",
+    "test": "jest src/",
+    "watch": "npm run clean && run-p build:* && run-p watch:js watch:css watch:pug watch:vid watch:server",
     "watch:css": "npm run build:css -- --watch",
     "watch:pug": "npm run build:pug -- --watch",
     "watch:js": "onchange 'src/**/*.js' --exclude 'src/**/*.test.js' -- npm run build:js",
+    "watch:server": "onchange 'dist/**/*.js' --initial -- npm run start",
+    "watch:vid": "onchange 'vid/*' -- npm run build:vid"
   }
 }
