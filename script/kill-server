@@ -1,0 +1,7 @@
+#!/bin/sh
+PID=$(lsof -n -i :8080 | grep LISTEN | cut -f 5 -d ' ')
+if [ -z "$PID" ]; then
+  echo 'we got nothing'
+else
+  kill $PID
+fi
