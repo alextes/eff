@@ -27,7 +27,7 @@ function shuffle(array) {
 }
 
 // TODO: play next button should be disabled until this completes
-fetch('vid-list.json')
+fetch('eff/vid-list.json')
   .then(response => response.json())
   .then((vidList) => {
     vids = vidList;
@@ -42,7 +42,7 @@ function startNextVid() {
   const nextVid = vids.pop();
 
   // TODO: get next vid url
-  player.setAttribute('src', `vid/${nextVid}`);
+  player.setAttribute('src', `eff/vid/${nextVid}`);
   player.play();
 }
 
