@@ -39,7 +39,6 @@
     "clean": "rm -r dist/ && mkdir dist/",
     "deploy": "npm run build && run-s deploy:* && ssh root@51.15.63.110 'cd eff/; npm run restart'",
     "deploy:dist": "sh script/deploy-dist",
-    "deploy:vid": "sh script/deploy-vid",
     "kill": "sh script/kill-server",
     "lint": "run-s lint:*",
     "lint:js": "eslint --cache src/",
