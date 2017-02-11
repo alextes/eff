@@ -4,7 +4,10 @@ const { buildList } = require('./build-vid-list.js');
 const server = require('./server.js');
 
 // build the video's list
-buildList();
+buildList()
+  .catch((err) => {
+    pino.error(err);
+  });
 
 // start the server
 const PORT = 8080;
