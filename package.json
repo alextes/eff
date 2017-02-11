@@ -45,6 +45,6 @@
     "watch": "npm-run-all -p watch:*",
     "watch:css": "npm run build:css -- --watch",
     "watch:pug": "npm run build:pug -- --watch",
-    "watch:server": "nodemon -q -w src/ --exec babel-node src/index.js"
+    "watch:js": "nodemon -q -w src/ --exec babel-node src/index.js"
   }
 }
