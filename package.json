@@ -22,8 +22,8 @@
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
     "jest": "^18.1.0",
-    "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.1",
+    "onchange": "^3.2.1",
     "postcss-cli": "^2.6.0",
     "pug-cli": "^1.0.0-alpha6",
     "stylelint": "^7.8.0",
@@ -45,6 +45,6 @@
     "watch": "npm-run-all -p watch:*",
     "watch:css": "npm run build:css -- --watch",
     "watch:pug": "npm run build:pug -- --watch",
-    "watch:js": "nodemon -q -w src/ --ignore src/public/vid-list.json --exec babel-node src/index.js"
+    "watch:js": "onchange 'src/**/*.js' --exclude 'src/**/*.test.js' -- npm run build:js",
   }
 }
