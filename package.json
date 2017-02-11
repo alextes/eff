@@ -37,7 +37,7 @@
     "build:js": "babel -d dist/ --ignore *.test.js src/",
     "build:vid": "mkdir dist/public && cp -r src/public/vid dist/public/",
     "clean": "rm -r dist/ && mkdir dist/",
-    "deploy": "npm run build && run-s deploy:* && ssh root@51.15.63.110 'cd eff/; npm run restart > eff.log &'",
+    "deploy": "npm run build && run-s deploy:* && ssh root@51.15.63.110 'cd eff/; export NODE_ENV=production; yarn install && npm run restart > eff.log &'",
     "deploy:files": "sh script/deploy-files",
     "kill": "sh script/kill-server",
     "lint": "run-s lint:*",
