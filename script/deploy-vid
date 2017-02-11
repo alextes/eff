@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -rPh ~/Amazon\ Drive/internet\ gold/Bertie\ Bott\'s\ Every\ Flavour\ Feels/*.webm root@51.15.63.110:~/eff/dist/public/vid/

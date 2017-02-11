@@ -37,6 +37,8 @@
     "build:js": "babel -d dist/ --ignore *.test.js src/",
     "build:vid": "mkdir dist/public && cp -r vid dist/public/",
     "clean": "rm -r dist/ && mkdir dist/",
+    "deploy:dist": "sh script/deploy-dist",
+    "deploy:vid": "sh script/deploy-vid",
     "lint": "run-s lint:*",
     "lint:js": "eslint --cache src/",
     "lint:css": "stylelint src/public/*.sss",

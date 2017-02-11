@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -rPh package.json yarn.lock dist root@51.15.63.110:~/eff/
