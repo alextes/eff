@@ -28,9 +28,9 @@ function shuffle(array) {
 
 // TODO: play next button should be disabled until this completes
 fetch('vid-list.json')
-  .then(response => response.blob())
-  .then((vidListJSON) => {
-    vids = JSON.parse(vidListJSON);
+  .then(response => response.json())
+  .then((vidList) => {
+    vids = vidList;
     shuffle(vids);
 
     const [button] = document.getElementsByClassName('get-feels');
