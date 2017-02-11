@@ -1,4 +1,3 @@
-/* eslint no-param-reassign: ["error", { "props": false }] */
 const Koa = require('koa');
 const logger = require('koa-pino-logger');
 const serve = require('koa-static');
