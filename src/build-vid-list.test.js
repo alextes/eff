@@ -5,7 +5,7 @@ const buildVidList = require('./build-vid-list');
 
 test('outputs the list of files in vid/', async () => {
   const exFilenames = await buildVidList.listVids();
-  const acFilenames = await pify(fs.readdir)(path.join(__dirname, '..', 'vid'));
+  const acFilenames = await pify(fs.readdir)(path.join(__dirname, 'public', 'vid'));
   expect(exFilenames).toEqual(acFilenames);
 });
 

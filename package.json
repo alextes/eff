@@ -35,7 +35,7 @@
     "build:pug": "pug src/public/index.pug --out dist/public",
     "build:css": "postcss -o dist/public/main.css -p sugarss src/public/*.sss",
     "build:js": "babel -d dist/ --ignore *.test.js src/",
-    "build:vid": "mkdir dist/public && cp -r vid dist/public/",
+    "build:vid": "mkdir dist/public && cp -r src/public/vid dist/public/",
     "clean": "rm -r dist/ && mkdir dist/",
     "deploy": "npm run build && run-s deploy:* && ssh root@51.15.63.110 'cd eff/; npm run restart &'",
     "deploy:files": "sh script/deploy-files",

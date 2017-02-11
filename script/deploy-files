@@ -5,7 +5,7 @@
 # for the full but emotionally severly limited experience.
 VID_SRC=~/Amazon\ Drive/internet\ gold/Bertie\ Bott\'s\ Every\ Flavour\ Feels
 if [ ! -d "$VID_SRC" ]; then
-  VID_SRC=vid
+  VID_SRC=src/public/vid
 fi
 
 rsync -rPh package.json yarn.lock script dist root@51.15.63.110:~/eff/

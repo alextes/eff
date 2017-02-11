@@ -5,7 +5,7 @@ const pino = require('pino')();
 
 function listVids() {
   pino.debug('reading files from vid/');
-  return pify(fs.readdir)(path.join(__dirname, '..', 'vid'));
+  return pify(fs.readdir)(path.join(__dirname, 'public', 'vid'));
 }
 
 async function buildList() {
