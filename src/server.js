@@ -6,6 +6,6 @@ const path = require('path');
 
 const app = new Koa();
 app.use(logger());
-app.use(serve(path.join(__dirname, 'public'), { maxage: 3600000 }));
+app.use(serve(path.join(__dirname, 'public/eff'), { maxage: 3600000 }));
 
 module.exports = app;
