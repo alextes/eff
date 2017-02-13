@@ -10,3 +10,4 @@ fi
 
 rsync -rPh package.json yarn.lock script dist root@51.15.63.110:~/eff/
 rsync -rPh "$VID_SRC"/*.webm root@51.15.63.110:~/eff/dist/public/eff/vid/
+rsync -rPh "$VID_SRC"/*.mp4 root@51.15.63.110:~/eff/dist/public/eff/vid/
