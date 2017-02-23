@@ -26,7 +26,11 @@ function shuffle(array) {
   return array;
 }
 
-fetch('eff/vid-list.json')
+fetch('eff/vid-list.json', {
+  headers: new Headers({
+    'Authorization': 'Basic YW5vbjpmZWVscw=='
+  })
+})
   .then(response => response.json())
   .then((vidList) => {
     vids = vidList;
