@@ -26,7 +26,6 @@ function shuffle(array) {
   return array;
 }
 
-// TODO: play next button should be disabled until this completes
 fetch('eff/vid-list.json')
   .then(response => response.json())
   .then((vidList) => {
