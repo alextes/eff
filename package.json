@@ -23,7 +23,7 @@
     "build:vid": "cp -r src/public/eff/vid dist/public/eff",
     "build:vid-list": "node dist/build-vid-list.js",
     "clean": "rm -r dist/ && mkdir -p dist/public/eff",
-    "deploy": "yarn run build && run-s deploy:* && ssh root@51.15.63.110 'cd eff/; yarn install --production; yarn run build:vid-list > eff.log &'",
+    "deploy": "yarn run build && run-s deploy:* && ssh root@51.15.63.110 'cd eff/; yarn install; yarn run build:vid-list > eff.log &'",
     "deploy:files": "sh script/deploy-files",
     "watch": "yarn run clean && run-p build:* && run-p watch:css watch:pug",
     "watch:css": "yarn run build:css -- --watch",
