@@ -3,21 +3,18 @@ body {
   flex-direction: column;
   align-items: center;
 
-  h2 {
-    text-align: center
-  }
+}
 
-  button i {
-    margin-left: 4px
-  }
+button i {
+  margin-left: 4px;
 }
 
 .feels-player {
-  display: block
-  max-width: 100%
-  max-height: 100%
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .get-feels {
-  margin-top: 20px
+  margin-top: 20px;
 }
