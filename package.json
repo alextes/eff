@@ -11,12 +11,11 @@
     "pify": "^4.0.1"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "pug-cli": "^1.0.0-alpha6"
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
     "build": "yarn run clean && run-p build:*",
-    "build:pug": "pug src/public/eff/index.pug --out dist/public/eff",
+    "build:html": "cp src/public/eff/index.html dist/public/eff",
     "build:css": "cp src/public/eff/main.css dist/public/eff/",
     "build:js": "cp src/build-vid-list.js dist/",
     "build:client-js": "cp src/public/eff/index.js dist/public/eff",
@@ -25,8 +24,7 @@
     "clean": "rm -r dist/ && mkdir -p dist/public/eff",
     "deploy": "yarn run build && run-s deploy:* && ssh root@51.15.63.110 'cd eff/; yarn install; yarn run build:vid-list > eff.log &'",
     "deploy:files": "sh script/deploy-files",
-    "watch": "yarn run clean && run-p build:* && run-p watch:css watch:pug",
-    "watch:css": "yarn run build:css -- --watch",
-    "watch:pug": "yarn run build:pug -- --watch"
+    "watch": "yarn run clean && run-p build:*",
+    "watch:css": "yarn run build:css -- --watch"
   }
 }
